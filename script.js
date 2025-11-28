@@ -1,10 +1,10 @@
-// بسيط: تحريك أشرطة المهارات عند الظهور + تفعيل قائمة الموبايل + سنة الفوتر
+
 document.addEventListener('DOMContentLoaded', function(){
-  // تعيين سنة الفوتر
+
   const yearEl = document.getElementById('year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // قائمة الجوال
+
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
   if(navToggle && mainNav){
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // تحريك أشرطة التقدّم عند تمرير الصفحة
+ 
   const observer = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', function(){
   const skillsSection = document.getElementById('skills');
   if(skillsSection) observer.observe(skillsSection);
 
-  // تجربة خفيفة للتأكد من وجود input focus style
+  
   document.querySelectorAll('input,textarea').forEach(el=>{
     el.addEventListener('focus', ()=> el.style.boxShadow = '0 4px 18px rgba(11,115,255,0.08)');
     el.addEventListener('blur', ()=> el.style.boxShadow = 'none');
   });
+
 });
